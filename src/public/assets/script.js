@@ -505,22 +505,9 @@ $(document).ready(function(){
 
 const header = document.getElementsByTagName('header');
 const buttonGoUp = document.getElementById('go-up-arrow');
-const maxWidth800 = window.matchMedia('(max-width: 800px)');
-
-function hideArrow(mediaQuery){
-    if(mediaQuery.matches){
-        $('#go-up-arrow').css('display','none');
-    }else{
-        $('#go-up-arrow').css('display','flex');
-    }
-}
 
 window.onscroll = function(){
-    maxWidth800.addEventListener('change', function() {
-        hideArrow(maxWidth800);
-    });
-
-    if(this.scrollY > window.innerHeight){
+    if(this.scrollY > window.innerHeight && !window.matchMedia("(max-width: 800px)").matches){
         buttonGoUp.style.transform = 'scale(1)';
     }else{
         buttonGoUp.style.transform = 'scale(0)';
