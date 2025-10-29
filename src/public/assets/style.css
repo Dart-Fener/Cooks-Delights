@@ -1584,7 +1584,9 @@ footer #footer-row{
 
     #palette-title { align-items: flex-start; }
     
-    #palette-list-categories,.palette-list-flags-tags{ grid-template-columns: 50% 50%; }
+    #palette-list-categories{ grid-template-columns: 100%; }
+    
+    .palette-list-flags-tags{ grid-template-columns: 50% 50%; }
 
     /*--------------PAGE RECIPES--------------*/
 
