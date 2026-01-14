@@ -136,7 +136,7 @@ header .logo{
     justify-content: center;
     align-items: center;
     gap: 10%;
-    padding-left: 2%;
+    padding-left: 1%;
 }
 
 header .logo span{
@@ -949,7 +949,7 @@ div#recipes-cards{
 #recipes-cards-title{ text-align: center; }
 
 #recipes-cards-title h1{
-    font-size: clamp(18px,5vw,36px);
+    font-size: clamp(18px,8vw,36px);
     font-weight: 500;
     color: var(--coral-theme);
 }
@@ -1089,7 +1089,7 @@ section#recipe-detailes{
 
 #recipe-detailes-grid img#thumb{
     width: 60%;
-    border: double var(--coral-theme) 12px;
+    border: double var(--coral-theme) clamp(6px,2vw,12px);
     border-radius: 10px;
 }
 
@@ -1405,6 +1405,11 @@ footer #footer-row{
 /*---------------------------------------------------------RESPONSIVE--------------------------------------------------------*/
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
+/*
+******************************************************
+**********************-900px-*************************
+******************************************************
+*/
 
 @media screen and (max-width: 900px){
 
@@ -1445,9 +1450,11 @@ footer #footer-row{
     #footer-row nav{ margin-left: 0; }
 }
 
-/**************************************************************************************************************************/
-/**************************************************************************************************************************/
-
+/*
+******************************************************
+**********************-800px-*************************
+******************************************************
+*/
 
 @media screen and (max-width: 800px){
 
@@ -1513,6 +1520,11 @@ footer #footer-row{
     #footer-row nav a{
         width: max-content;
         padding: 4% 0;
+
+        &::after{
+        content: '';
+        display: none;
+        }
     }
 
     #footer-row #socials-link{ 
@@ -1522,13 +1534,15 @@ footer #footer-row{
         gap: 5%;
     }
 
-    #footer-row #socials-link img{ width: 4%;}
+    #footer-row #socials-link img{ width: 3%;}
     
 }
 
-
-/**************************************************************************************************************************/
-/**************************************************************************************************************************/
+/*
+******************************************************
+**********************-480px-*************************
+******************************************************
+*/
 
 @media screen and (max-width: 480px){
 
@@ -1549,7 +1563,7 @@ footer #footer-row{
     /*--------------PAGE HOME SECTION FEATURED-RECIPES--------------*/
 
     section#featured-recipes{ 
-        width: 70%;
+        width: 97%;
         align-self: center;
     }
 
@@ -1560,6 +1574,12 @@ footer #footer-row{
     .recipes-cards-slider img.cardSliderImg{ aspect-ratio: 16 / 10;}
 
     .inner-card-slider{ aspect-ratio: 3; }
+
+    .inner-card-slider h5{ font-size: clamp(14px,3vw,24px); }
+
+    .inner-card-slider h6{ font-size: clamp(8px,3vw,16px); }
+
+    .recipes-cards-slider a.emptyBackButton{ font-size: clamp(7px,3vw,14px); }
 
     /*--------------PAGE HOME SECTION ABOUT US HOME--------------*/
 
@@ -1573,12 +1593,18 @@ footer #footer-row{
     #about-us-home-title { margin-bottom: 1%; }
 
     .about-us-home-media:nth-child(2),.about-us-home-media:nth-child(3){
-        width: 70%;
+        width: 95%;
         aspect-ratio: 16/9;
+        border-radius: 10px;
         margin-bottom: 2%;
     }
 
-    .about-us-home-media:nth-child(4){ width: 70%; }
+    .about-us-home-media:nth-child(4){ 
+        width: 95%;
+        border-radius: 10px; 
+    }
+
+    section#home-subscribe a.fullBackButton{ padding: 2%; }
 
     /*--------------PAGE PALETTE--------------*/
 
@@ -1598,12 +1624,45 @@ footer #footer-row{
 
     #recipes-cards-list{ grid-template-columns: 1fr; }
 
-    .card{ width: 60%; }
+    .card{ width: 100%; }
+
+    .card a.emptyBackButton{ font-size: clamp(7px,3vw,14px); }
+
+    .inner-card h5{ font-size: clamp(14px,3vw,24px); }
+
+    .inner-card h6{ font-size: clamp(8px,3vw,16px); }
 
     /*--------------------FOOTER--------------------*/
 
-    #footer-row nav{ flex-direction: column; }
+    footer #footer-row{ 
+        width: 95%;
+        margin-left: 3%;
+    }
 
-    #footer-row nav a { padding: 1% 0; }
+    #footer-row .logo{
+        margin-top: 3%;
+    }
+
+    #footer-row nav{
+        width: 100%;
+        display: contents;
+        flex-direction: column; 
+    }
+
+    #footer-row nav a {
+        width: inherit;
+        padding: 2% 0;
+        border-bottom: solid rgba(240,235,225,0.20) 2px;
+    }
+
+    #footer-row #socials-link{
+        margin: 3% 0;
+    }
+
+    #footer-row #socials-link img{ width: 4%; }
+
+    footer h6{
+        margin: 3% 0 3% 0;
+    }
 
 }

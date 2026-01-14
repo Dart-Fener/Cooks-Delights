@@ -18,7 +18,7 @@
             <img src="{{ URL::to('assets/img/icon/Youtube.svg') }}" alt="Youtube-Icon">
         </div>
     </div>
-    <h6>COPYRIGHT: © 2025 COOKS DELIGHT</h6>
+    <h6>COPYRIGHT: © 2026 COOKS DELIGHT</h6>
 </footer> <!-- END FOOTER -->
 
 <!-- GO UP ARROW -->
