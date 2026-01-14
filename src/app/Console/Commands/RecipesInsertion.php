@@ -74,10 +74,10 @@ class RecipesInsertion extends Command
 
         $this->comment("Initial total number of recipes into database:" . CountRecipes() . "\n");
 
-        $recipesNum = $this->ask("Digits the total number of recipes (Max 301)");
+        $recipesNum = $this->ask("Digits the total number of recipes (Max 597)");
 
         switch(true){
-            case is_numeric($recipesNum) && $recipesNum > 0 && $recipesNum <= 301:
+            case is_numeric($recipesNum) && $recipesNum > 0 && $recipesNum <= 597:
                 do{
                     $numRecipesRequired = $recipesNum - CountRecipes();
                     
@@ -113,7 +113,7 @@ class RecipesInsertion extends Command
                                 $this->recipe->insertOrIgnore([
                                     'id' => $obj->idMeal,
                                     'slug' => strtolower($slug),
-                                    'name' => $obj->strMeal,
+                                    'name' => ucwords($obj->strMeal),
                                     'instruction' => $instruction,
                                     'thumb' => $obj->strMealThumb,
                                     'category_id' => $categ_id,
@@ -201,8 +201,8 @@ class RecipesInsertion extends Command
             case !is_numeric($recipesNum):
                 $this->error("\n Please digit a numerical value \n");
                 break;
-            case $recipesNum < 1 || $recipesNum > 301:
-                $this->error("\n Please digit a number between 1 and 301 \n");
+            case $recipesNum < 1 || $recipesNum > 597:
+                $this->error("\n Please digit a numeric value between 1 and 597 \n");
                 break;
             
         }
