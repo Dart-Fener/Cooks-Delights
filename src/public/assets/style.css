@@ -23,7 +23,7 @@ body{
     padding: 0;
     
     background-color: var(--beige-theme);
-    padding: 2% 5%;
+    padding: 0 5%;
 }
 
 /*------------------A CLASS=BUTTON TYPOGRAPHY----------------*/
@@ -80,7 +80,7 @@ div.page-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3%;
+    transition: 1s linear;
 }
 
 .page-title h3{
@@ -127,6 +127,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 0.5% 0;
+    margin-top: 2%;
 }
 
 /*--------------------DIV LOGO------------------*/
@@ -224,13 +225,23 @@ header div#burger-menu{
     width: 50%;
     height: 6%;
     background-color: var(--black-theme);
+    transform-origin: right;
+    transition: 0.5s;
 }
 
 /*-----------------NAV MOBILE-NAV------------------*/
 
 nav#mobile-nav{
-    display: none;
+    display: flex;
     flex-direction: column;
+    position: absolute;
+    width: 90%;
+    opacity: 0;
+}
+
+nav#mobile-nav.mobile-nav-active{
+    opacity: 1;
+    transition: 1s ease-in-out 1s;
 }
 
 nav#mobile-nav a{
@@ -863,7 +874,7 @@ fieldset#ingredient #form-search input[type=text]{
 }
 
 #container-list .ingr-list:hover{
-    background-color: var(--ocra-theme);
+    background-color: var(--coral-theme);
     cursor: pointer;
 }
 

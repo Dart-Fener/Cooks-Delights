@@ -5,12 +5,13 @@
 @section('content')
 
     <!-- HERO -->
-    <section id="hero">
-
+    <section 
+        id="hero"
+        style="margin-top: 3%"
+    >
         <h1>UNLEASH CULINARY EXCELLENCE</h1>
         <h3>Explore a world of flavors, discover handcrafted recipes, and let the aroma of our passion for cooking fill your kitchen</h3>
         <button class="fullBack">EXPLORE RECIPES</button>
-
     </section> <!-- END HERO -->
 
     <!-- PALETTE HOME -->

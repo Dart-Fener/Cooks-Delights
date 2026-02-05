@@ -2,22 +2,124 @@
 /*------------------------HEADER BURGER MENU---------------------*/
 
 $('#burger-menu').on('click',function(){
-    if($('#mobile-nav').css('display') === 'none'){
-        $('#mobile-nav').css('display','flex');
-    }else{
-        $('#mobile-nav').css('display','none');
-    }     
+    const HeroSec = document.getElementById('hero');
+    const PageTitleDiv = document.getElementsByClassName('page-title')[0];
+
+    const BurgerLines = () => {
+        if($('#mobile-nav').css('visibility') == 'hidden'){
+            $('#mobile-nav').css('visibility','visible');
+            $('.burger-line:nth-child(1)').css('transform','rotate(-40deg)');
+            $('.burger-line:nth-child(1)').css('position','sticky');
+            $('.burger-line:nth-child(1)').css('margin-right','10%');
+            $('.burger-line:nth-child(2)').css('opacity','0');
+            $('.burger-line:nth-child(2)').css('margin-right','10%');
+            $('.burger-line:nth-child(3)').css('margin-right','10%');
+            $('.burger-line:nth-child(3)').css('transform','rotate(40deg)');
+            $('.burger-line:nth-child(3)').css('position','sticky');
+        }else{
+            $('#mobile-nav').css('visibility','hidden');
+            $('.burger-line:nth-child(1)').css('transform','rotate(0deg)');
+            $('.burger-line:nth-child(1)').css('position','unset');
+            $('.burger-line:nth-child(1)').css('margin-right','0');
+            $('.burger-line:nth-child(2)').css('opacity','unset');
+            $('.burger-line:nth-child(2)').css('margin-right','0');
+            $('.burger-line:nth-child(3)').css('margin-right','0');
+            $('.burger-line:nth-child(3)').css('transform','rotate(0deg)');
+            $('.burger-line:nth-child(3)').css('position','unset');
+        }
+    }
+
+    switch(true){
+        case HeroSec && HeroSec.style.marginTop == '3%':
+            if(window.innerWidth >= 720){
+                $('#hero').css('margin-top','30%');
+            }else{
+                 $('#hero').css('margin-top','33%');
+            }
+            BurgerLines();
+            $('#mobile-nav').addClass('mobile-nav-active');
+            break;
+        case HeroSec && HeroSec.style.marginTop == '30%':
+            $('#hero').css('margin-top','3%');
+            BurgerLines();
+            $('#mobile-nav').removeClass('mobile-nav-active');
+            break;
+        case HeroSec && HeroSec.style.marginTop == '33%':
+            $('#hero').css('margin-top','3%');
+            BurgerLines();
+            $('#mobile-nav').removeClass('mobile-nav-active');
+            break;
+    }
+
+    switch(true){
+        case PageTitleDiv && PageTitleDiv.style.marginTop == '3%':
+            if(window.innerWidth >= 720){
+                $('.page-title').css('margin-top','30%');
+            }else{
+                $('.page-title').css('margin-top','33%');
+            }
+            BurgerLines();
+            $('#mobile-nav').addClass('mobile-nav-active');
+            break;
+        case PageTitleDiv && PageTitleDiv.style.marginTop == '30%':
+            $('.page-title').css('margin-top','3%');
+            BurgerLines();
+            $('#mobile-nav').removeClass('mobile-nav-active');
+            break;
+        case PageTitleDiv && PageTitleDiv.style.marginTop == '33%':
+            $('.page-title').css('margin-top','3%');
+            BurgerLines();
+            $('#mobile-nav').removeClass('mobile-nav-active');
+            break;
+    }    
 });
 
 /**
- * Questa funzione utlizza una media query, aggiungendo un evento che disabilita 
- * il mobile-nav automaticamente al di sopra degli 800px
+ * This function use media query, adding an event which disables
+ * the mobile-nav automatically if the window.innerWidth is up to 800px
  */
 
 $(function() {
 	function mediaSize() {
-		if (window.matchMedia("(min-width: 800px)").matches) {
-			$('#mobile-nav').css('display','none');
+        const HeroSec = document.getElementById('hero');
+        const PageTitleDiv = document.getElementsByClassName('page-title')[0];
+
+        if(window.matchMedia("(max-width: 720px)").matches) {
+            switch(true){
+                case HeroSec && HeroSec.style.marginTop == '30%':
+                    $('#hero').css('margin-top','33%');
+                    break;
+                case PageTitleDiv && PageTitleDiv.style.marginTop == '30%':
+                    $('.page-title').css('margin-top','33%');
+                    break;
+            }
+        }else{
+            switch(true){
+                case HeroSec && HeroSec.style.marginTop == '33%':
+                    $('#hero').css('margin-top','30%');
+                    break;
+                case PageTitleDiv && PageTitleDiv.style.marginTop == '33%':
+                    $('.page-title').css('margin-top','30%');
+                    break;
+            }
+        }
+
+		if(window.matchMedia("(min-width: 800px)").matches) {
+            $('#mobile-nav').css('visibility','hidden');
+            $('#mobile-nav').removeClass('mobile-nav-active');
+            $('.burger-line:nth-child(1)').css('transform','rotate(0deg)');
+            $('.burger-line:nth-child(1)').css('position','unset');
+            $('.burger-line:nth-child(1)').css('margin-right','0');
+            $('.burger-line:nth-child(2)').css('opacity','unset');
+            $('.burger-line:nth-child(2)').css('margin-right','0');
+            $('.burger-line:nth-child(3)').css('margin-right','0');
+            $('.burger-line:nth-child(3)').css('transform','rotate(0deg)');
+            $('.burger-line:nth-child(3)').css('position','unset');
+            if(HeroSec){
+                $('#hero').css('margin-top','3%');
+            }else if(PageTitleDiv){
+                $('.page-title').css('margin-top','3%');
+            }
 		}
 	}
 	mediaSize();

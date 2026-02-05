@@ -19,7 +19,10 @@
 </header> <!-- END HEADER -->
 
 <!-- MOBILE NAV -->
-<nav id="mobile-nav">
+<nav 
+    id="mobile-nav"
+    style="visibility: hidden"
+>
 
     <a href="{{ route('home') }}">HOME</a>
     <a href="{{ route('palettes') }}">PALETTES</a>

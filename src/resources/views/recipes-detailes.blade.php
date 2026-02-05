@@ -7,7 +7,10 @@
 @section('content')
 
     <!-- PAGE TITLE -->
-    <div class="page-title">
+    <div 
+        class="page-title"
+        style="margin-top: 3%"
+    >
         <h3>Recipes Details</h3>
         <nav class="page-title-nav">
             <a href="{{ route('home') }}">Home</a>
