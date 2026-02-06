@@ -9,23 +9,19 @@ $('#burger-menu').on('click',function(){
         if($('#mobile-nav').css('visibility') == 'hidden'){
             $('#mobile-nav').css('visibility','visible');
             $('.burger-line:nth-child(1)').css('transform','rotate(-40deg)');
-            $('.burger-line:nth-child(1)').css('position','sticky');
             $('.burger-line:nth-child(1)').css('margin-right','10%');
             $('.burger-line:nth-child(2)').css('opacity','0');
             $('.burger-line:nth-child(2)').css('margin-right','10%');
             $('.burger-line:nth-child(3)').css('margin-right','10%');
             $('.burger-line:nth-child(3)').css('transform','rotate(40deg)');
-            $('.burger-line:nth-child(3)').css('position','sticky');
         }else{
             $('#mobile-nav').css('visibility','hidden');
             $('.burger-line:nth-child(1)').css('transform','rotate(0deg)');
-            $('.burger-line:nth-child(1)').css('position','unset');
             $('.burger-line:nth-child(1)').css('margin-right','0');
             $('.burger-line:nth-child(2)').css('opacity','unset');
             $('.burger-line:nth-child(2)').css('margin-right','0');
             $('.burger-line:nth-child(3)').css('margin-right','0');
             $('.burger-line:nth-child(3)').css('transform','rotate(0deg)');
-            $('.burger-line:nth-child(3)').css('position','unset');
         }
     }
 
@@ -108,13 +104,11 @@ $(function() {
             $('#mobile-nav').css('visibility','hidden');
             $('#mobile-nav').removeClass('mobile-nav-active');
             $('.burger-line:nth-child(1)').css('transform','rotate(0deg)');
-            $('.burger-line:nth-child(1)').css('position','unset');
             $('.burger-line:nth-child(1)').css('margin-right','0');
             $('.burger-line:nth-child(2)').css('opacity','unset');
             $('.burger-line:nth-child(2)').css('margin-right','0');
             $('.burger-line:nth-child(3)').css('margin-right','0');
             $('.burger-line:nth-child(3)').css('transform','rotate(0deg)');
-            $('.burger-line:nth-child(3)').css('position','unset');
             if(HeroSec){
                 $('#hero').css('margin-top','3%');
             }else if(PageTitleDiv){

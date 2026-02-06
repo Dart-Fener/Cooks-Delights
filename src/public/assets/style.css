@@ -255,7 +255,7 @@ nav#mobile-nav a{
 }
 
 nav#mobile-nav a:hover{
-    background-color: var(--ocra-theme);
+    background-color: var(--coral-theme);
     border-radius: 20px;
 }
 
