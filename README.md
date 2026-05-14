@@ -1,6 +1,6 @@
 # 🍽️ Cooks Delights
 
-Cook Delights is a cuisine website built with Laravel 10.x that allows users to explore recipes from around the world. It integrates with the free public API from [TheMealDB](https://www.themealdb.com/api.php) to fetch and display recipe data.
+Cook Delights is a cuisine website built with Laravel 12.0 that allows users to explore recipes from around the world. It integrates with the free public API from [TheMealDB](https://www.themealdb.com/api.php) to fetch and display recipe data.
 
 ---
 
@@ -14,8 +14,8 @@ Cook Delights is a cuisine website built with Laravel 10.x that allows users to 
 
 ## ⚙️ Tech Stack
 
-- **Laravel 10.x (PHP 8.x)**
-- **MySQL**
+- **Laravel 12.0 (PHP 8.2)**
+- **MySQL 9.2.0**
 - **Docker & Docker Compose**
 - **The design is based on a free Figma template by [Ilia Bortnikov](https://www.figma.com/community/file/1331351586208563684/free-cooking-recipes-blog-template), customized to fit the needs of this project**
 - **[TheMealDB API](https://www.themealdb.com/api.php)**
